@@ -77,7 +77,9 @@ def retrieve(
 ) -> list[dict]:
     """Embed the query and return top-N matching chunks."""
     model = _get_embedding_model()
-    query_embedding = model.encode([query], show_progress_bar=False).tolist()[0]
+    # BGE models perform better with this query prefix
+    prefixed_query = f"Represent this sentence for searching relevant passages: {query}"
+    query_embedding = model.encode([prefixed_query], show_progress_bar=False).tolist()[0]
 
     results = collection.query(
         query_embeddings=[query_embedding],

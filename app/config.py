@@ -17,7 +17,7 @@ MAX_CHUNK_CHARACTERS: int = 1500
 CHUNK_OVERLAP_CHARACTERS: int = 150
 
 CHROMA_PERSIST_DIR: str = ".chroma_db"
-EMBEDDING_MODEL: str = "all-MiniLM-L6-v2"
+EMBEDDING_MODEL: str = "BAAI/bge-base-en-v1.5"
 EMBEDDING_BATCH_SIZE: int = 64
 
 OPENAI_MODELS: list[str] = ["gpt-4o-mini", "gpt-4o", "gpt-4-turbo"]
