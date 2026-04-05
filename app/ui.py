@@ -172,6 +172,12 @@ def create_app() -> gr.Blocks:
                 history=pairs,
             )
 
+            # Append sources footer if the LLM didn't include one
+            if "### Sources" not in response:
+                unique_sources = list(dict.fromkeys(c["source"] for c in chunks))
+                sources_md = "\n".join(f"- `{s}`" for s in unique_sources)
+                response += f"\n\n### Sources\n{sources_md}"
+
             history = history + [
                 {"role": "user", "content": user_msg},
                 {"role": "assistant", "content": response},
