@@ -1,0 +1,12 @@
+[project]
+name = "project-expert"
+version = "0.1.0"
+description = "Git repository expert chatbot with RAG pipeline"
+requires-python = ">=3.12"
+dependencies = [
+    "chromadb>=0.5",
+    "sentence-transformers>=3.0",
+    "gradio>=4.0",
+    "openai>=1.0",
+    "python-dotenv>=1.0",
+]

@@ -1,0 +1,8 @@
+.env
+.chroma_db/
+.venv/
+__pycache__/
+*.pyc
+.idea/
+.claude/
+*.egg-info/
