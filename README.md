@@ -27,13 +27,57 @@ All three providers use the OpenAI-compatible chat completions API, so no extra 
 
 ## Prerequisites
 
-- Python 3.12+
-- [uv](https://docs.astral.sh/uv/getting-started/installation/) — fast Python package manager
+### Python 3.12
 
-Install `uv` if you don't have it:
+This project requires **Python 3.12 or newer**.
+
+Check your current version:
+```bash
+python3 --version
+```
+
+If you don't have Python 3.12, the easiest way to install it is via the official installer or a version manager:
+
+**macOS / Linux — using `pyenv` (recommended):**
+```bash
+# Install pyenv
+curl https://pyenv.run | bash
+
+# Restart your shell, then install Python 3.12
+pyenv install 3.12
+pyenv global 3.12
+```
+
+**macOS — using Homebrew:**
+```bash
+brew install python@3.12
+```
+
+**Windows:**
+Download the installer from [python.org/downloads](https://www.python.org/downloads/) and make sure to check **"Add Python to PATH"** during installation.
+
+---
+
+### uv
+
+`uv` is a fast Python package and project manager. It handles virtual environments and dependencies automatically — no need to manually run `pip install` or `python -m venv`.
+
+**macOS / Linux:**
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
+
+**Windows (PowerShell):**
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+**Verify the installation:**
+```bash
+uv --version
+```
+
+> `uv` will automatically download and use the correct Python version if it is not already installed on your system — so even if you skip the Python step above, `uv sync` will handle it.
 
 ---
 
